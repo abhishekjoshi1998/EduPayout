@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import type { Payout, Session } from '../../types';
 
-// Mock data for payouts
+
 const mockPayouts: Payout[] = [
   {
     id: 'p1',
