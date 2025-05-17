@@ -8,8 +8,6 @@ import {
   LucideEdit,
   LucideCalendar,
   LucideClock,
-  LucideUserCircle,
-  LucideTag,
   LucideX
 } from 'lucide-react';
 import { Session } from '../../types';

@@ -6,7 +6,6 @@ import {
   LucideDownload,
   LucideFileText,
   LucideDollarSign,
-  LucideUsers,
   LucideX,
   LucideCheck,
   LucideExternalLink

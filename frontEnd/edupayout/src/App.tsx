@@ -6,28 +6,27 @@ import { Toaster } from 'react-hot-toast';
 // Auth
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import LoginPage from './pages/LoginPage';
+import LoginPage from './pages/mentor/LoginPage';
 
 // Layouts
-import AdminLayout from './components/layout/AdminLayout';
+import AdminLayout from './components/layout/AdminRoute';
 import MentorLayout from './components/layout/MentorLayout';
 
 // Admin Pages
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminSessions from './pages/admin/Sessions';
-import AdminPayouts from './pages/admin/Payouts';
+import AdminPayouts from './pages/admin/Payout';
 import AdminReceipts from './pages/admin/Receipts';
-import AdminMentors from './pages/admin/Mentors';
-import AdminSettings from './pages/admin/Settings';
+
 
 // Mentor Pages
 import MentorDashboard from './pages/mentor/Dashboard';
-import MentorSessions from './pages/mentor/Sessions';
-import MentorPayouts from './pages/mentor/Payouts';
-import MentorProfile from './pages/mentor/Profile';
+
+import MentorPayouts from './pages/mentor/Payout';
+
 
 // Chat
-import ChatPage from './pages/ChatPage';
+import ChatPage from './pages/mentor/ChatPage';
 
 // Create a client for React Query
 const queryClient = new QueryClient();
@@ -48,8 +47,7 @@ function App() {
               <Route path="sessions" element={<AdminSessions />} />
               <Route path="payouts" element={<AdminPayouts />} />
               <Route path="receipts" element={<AdminReceipts />} />
-              <Route path="mentors" element={<AdminMentors />} />
-              <Route path="settings" element={<AdminSettings />} />
+            
               <Route path="chat/:mentorId" element={<ChatPage role="admin" />} />
             </Route>
             
@@ -57,9 +55,9 @@ function App() {
             <Route path="/mentor" element={<ProtectedRoute role="mentor"><MentorLayout /></ProtectedRoute>}>
               <Route index element={<Navigate to="/mentor/dashboard" replace />} />
               <Route path="dashboard" element={<MentorDashboard />} />
-              <Route path="sessions" element={<MentorSessions />} />
+            
               <Route path="payouts" element={<MentorPayouts />} />
-              <Route path="profile" element={<MentorProfile />} />
+             
               <Route path="chat" element={<ChatPage role="mentor" />} />
             </Route>
             
