@@ -10,7 +10,7 @@ import {
   LucideCheck,
   LucideExternalLink
 } from 'lucide-react';
-import { Payout, Session } from '../../types';
+import type { Payout, Session } from '../../types';
 
 // Mock data for payouts
 const mockPayouts: Payout[] = [

@@ -6,7 +6,7 @@ import {
   LucideFileText,
   LucideExternalLink
 } from 'lucide-react';
-import { Payout } from '../../types';
+import type { Payout } from '../../types';
 
 // Mock data for payouts
 const mockPayouts: Payout[] = [

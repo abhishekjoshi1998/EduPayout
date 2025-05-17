@@ -4,7 +4,7 @@ import {
   LucideDollarSign, 
   LucideFileText, 
   LucideChevronRight,
-  LucideCheckCircle,
+
   LucideAlertCircle
 } from 'lucide-react';
 

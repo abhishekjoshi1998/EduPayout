@@ -10,7 +10,7 @@ import {
   LucideClock,
   LucideX
 } from 'lucide-react';
-import { Session } from '../../types';
+import type { Session } from '../../types/index';
 
 // Mock data for sessions
 const mockSessions: Session[] = [

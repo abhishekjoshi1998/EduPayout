@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+
 import { useAuth } from '../../context/AuthContext';
 import { 
   LucideSend, 
@@ -7,7 +7,7 @@ import {
   LucideMoreVertical,
   LucideClock
 } from 'lucide-react';
-import { Message } from '../types';
+import type{ Message } from '../../types';
 
 interface ChatPageProps {
   role: 'admin' | 'mentor';
@@ -72,7 +72,7 @@ const ChatPage: React.FC<ChatPageProps> = ({ role }) => {
   const [newMessage, setNewMessage] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { user } = useAuth();
-  const { mentorId } = useParams<{ mentorId?: string }>();
+ 
   
   // Scroll to bottom of messages
   const scrollToBottom = () => {

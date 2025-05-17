@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
-import { User, AuthContextType } from '../types/index.ts';
+import type { User, AuthContextType } from '../types';
 
 // Create the auth context
 export const AuthContext = createContext<AuthContextType>({
@@ -30,10 +30,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const login = async (email: string, password: string) => {
     // For demo purposes, we're using mock data
     // In a real app, this would make an API call
-    
+
     // Mock admin user
     if (email === 'admin@edtech.com' && password === 'password') {
-      const adminUser = {
+      const adminUser: User = {
         id: '1',
         name: 'Admin User',
         email: 'admin@edtech.com',
@@ -44,10 +44,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       localStorage.setItem('user', JSON.stringify(adminUser));
       return;
     }
-    
+
     // Mock mentor user
     if (email === 'mentor@edtech.com' && password === 'password') {
-      const mentorUser = {
+      const mentorUser: User = {
         id: '2',
         name: 'Jane Smith',
         email: 'mentor@edtech.com',
@@ -58,7 +58,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       localStorage.setItem('user', JSON.stringify(mentorUser));
       return;
     }
-    
+
     // If no matching user, throw error
     throw new Error('Invalid email or password');
   };
